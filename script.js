@@ -10,6 +10,18 @@ function convertToRoman(num) {
     };
 
   //your code here
+	let ans=''
+	for(let key in obj){
+		let value=obj[key][1]
+		if(num>=value){
+			let temp=parseInt(num/value)
+			let tempans=''
+			for(let i=0;i<temp;i++){ tempans+=(obj[key][0]) }
+			ans+=(tempans)
+			num=num%value
+		}
+	}
+	return ans
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
